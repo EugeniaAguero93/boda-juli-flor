@@ -32,13 +32,3 @@ let x = setInterval(function () {
     $("#segundos .number").text("00");
   }
 }, 1000);
-
-// Animacion corazon seccion cuenta regresiva
-let svgContainerCorazonFalta = document.querySelector(".corazon-falta");
-
-let animCorazonFalta = bodymovin.loadAnimation({
-  wrapper: svgContainerCorazonFalta,
-  animType: "svg",
-  loop: true,
-  path: _pathProducto + "img/corazon-falta.json",
-});
