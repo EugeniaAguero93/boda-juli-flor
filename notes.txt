@@ -7,3 +7,6 @@ Hacer backend para recibir las asistencias y música sugeridas
 Cambiar coordenadas de cómo llegar civil y fiesta
 Obtener una clave de API para el uso del google maps
 El parallax que se usa es v1.5 la actual es la v3.1
+Funcionalidad de musica de fondo no funciona
+
+URL HTML original = https://www.fixdate.io/ar/modelo-invitacion/hojas

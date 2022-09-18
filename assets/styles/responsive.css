@@ -276,7 +276,7 @@
     max-width: 780px;
     height: 560px;
     padding: 8% 20%;
-    background: url("./images/img_modal01.svg");
+    background: url("../images/img_modal01.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100px center;
@@ -300,7 +300,7 @@
     max-width: 780px;
     height: 560px;
     padding: 8% 20%;
-    background: url("./images/img_modal01.svg");
+    background: url("../images/img_modal01.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100px center;
@@ -324,7 +324,7 @@
     max-width: 780px;
     height: 560px;
     padding: 8% 20%;
-    background: url("./images/img_modal01.svg");
+    background: url("../images/img_modal01.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100px center;
@@ -348,7 +348,7 @@
     max-width: 780px;
     height: 560px;
     padding: 8% 20%;
-    background: url("./images/img_modal01.svg");
+    background: url("../images/img_modal01.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100px center;
@@ -370,7 +370,7 @@
     z-index: 999;
     height: 150%;
     width: 6%;
-    background: url("./images/img_sombraGaleria_izq.svg") left center no-repeat;
+    background: url("../images/img_sombraGaleria_izq.svg") left center no-repeat;
     top: -27%;
   }
 
@@ -381,7 +381,7 @@
     z-index: 999;
     height: 150%;
     width: 6%;
-    background: url("./images/img_sombraGaleria_der.svg") right center repeat-y;
+    background: url("../images/img_sombraGaleria_der.svg") right center repeat-y;
     top: -27%;
   }
 }

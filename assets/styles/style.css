@@ -246,7 +246,7 @@ section.portada::before {
 }
 
 section.portada::after {
-  background-image: url("./images/img_ondas01.svg");
+  background-image: url("../images/img_ondas01.svg");
   position: absolute;
   content: "";
   background-repeat: no-repeat;
@@ -409,7 +409,7 @@ section.cuenta-regresiva {
 section.cuenta-regresiva .box-aros {
   width: 470px;
   height: 470px;
-  background: url("./images/img_circuloContador01.svg") center center no-repeat;
+  background: url("../images/img_circuloContador01.svg") center center no-repeat;
   position: absolute;
   z-index: 99;
   top: -200px;
@@ -487,7 +487,8 @@ section.cuenta-regresiva p.fin-cuenta {
 /* Ceremonia - Fiesta */
 
 section.ceremonia-fiesta {
-  background: url("./images/img_lineas01.svg") center 0 no-repeat var(--color-4);
+  background: url("../images/img_lineas01.svg") center 0 no-repeat
+    var(--color-4);
   padding-bottom: 20%;
   position: relative;
 }
@@ -531,7 +532,7 @@ section.ceremonia-fiesta .col-fiesta h3 {
 
 section.ceremonia-fiesta .col-ceremonia h3:after,
 section.ceremonia-fiesta .col-fiesta h3:after {
-  background-image: url("./images/img_cinta02.svg");
+  background-image: url("../images/img_cinta02.svg");
   position: absolute;
   content: "";
   background-size: contain !important;
@@ -545,7 +546,7 @@ section.ceremonia-fiesta .col-fiesta h3:after {
 
 section.ceremonia-fiesta .col-ceremonia h3:before,
 section.ceremonia-fiesta .col-fiesta h3:before {
-  background-image: url("./images/img_cinta01.svg");
+  background-image: url("../images/img_cinta01.svg");
   position: absolute;
   content: "";
   background-size: contain !important;
@@ -586,7 +587,7 @@ section.ceremonia-fiesta .info-col .info-box a.boton {
 }
 
 section.ceremonia-fiesta:after {
-  background-image: url("./images/img_ondas02.svg");
+  background-image: url("../images/img_ondas02.svg");
   position: absolute;
   content: "";
   background-size: contain !important;
@@ -696,7 +697,7 @@ section.galeria .slick-dots li.slick-active button:before {
 /* Fiesta */
 
 section.fiesta {
-  background: url("./images/img_ondas03.svg") center top no-repeat
+  background: url("../images/img_ondas03.svg") center top no-repeat
     var(--color-5);
   padding-top: 14%;
   position: relative;
@@ -729,7 +730,7 @@ section.fiesta .anim-tips {
 }
 
 section.fiesta:after {
-  background-image: url("./images/img_ondas04.svg");
+  background-image: url("../images/img_ondas04.svg");
   position: absolute;
   content: "";
   background-size: contain !important;
@@ -789,7 +790,8 @@ section.fiesta .item-fiesta .hojas-musica {
 /* Regalos */
 
 section.regalos {
-  background: url("../img/img_texturaFondo.jpg") left top repeat var(--color-4);
+  background: url("../images/img_texturaFondo.jpg") left top repeat
+    var(--color-4);
   padding-top: 14%;
   position: relative;
   padding-bottom: 10%;
@@ -824,7 +826,7 @@ section.instagram .container {
 }
 
 section.instagram:before {
-  background-image: url("./images/img_ondas05.svg");
+  background-image: url("../images/img_ondas05.svg");
   position: absolute;
   content: "";
   /* background-size: contain !important; */
@@ -859,7 +861,7 @@ section.instagram .anim-instagram {
 }
 
 section.instagram:after {
-  background-image: url("./images/img_ondas06.svg");
+  background-image: url("../images/img_ondas06.svg");
   position: absolute;
   content: "";
   /* background-size: contain !important; */
@@ -877,7 +879,8 @@ section.instagram:after {
 
 section.footer {
   position: relative;
-  background: url("../img/img_texturaFondo.jpg") left top repeat var(--color-4);
+  background: url("../images/img_texturaFondo.jpg") left top repeat
+    var(--color-4);
   padding-bottom: 10%;
   padding-top: 10%;
   margin-top: -2px;
