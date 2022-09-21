@@ -1,12 +1,8 @@
-img_texturaFondo.jpg no existe en el servidor
 Ver si hay que cambiar los titulos de los modals, en especial los de Ceremonia y Fiesta
-Falta implementar el loader
-El carrusel está estático, no mueve las fotos de forma dinámica
 Probar agendar el evento
-Hacer backend para recibir las asistencias y música sugeridas
-Cambiar coordenadas de cómo llegar civil y fiesta
-Obtener una clave de API para el uso del google maps
+Hacer backend para recibir las asistencias y música sugeridas? O usar un forms / survey
+Revisar urls de las coordenadas de los eventos
 El parallax que se usa es v1.5 la actual es la v3.1
-Funcionalidad de musica de fondo no funciona
+Revisar todo los elementos en mobile
 
 URL HTML original = https://www.fixdate.io/ar/modelo-invitacion/hojas

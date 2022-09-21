@@ -1,4 +1,4 @@
-setTimeout(() => {
+windowElement.ready(() => {
   // Abrir modal
   $("body").on("click", "a.modal-vestuario", function (e) {
     e.preventDefault();
@@ -7,4 +7,4 @@ setTimeout(() => {
       backdrop: "static",
     });
   });
-}, 1000);
+});

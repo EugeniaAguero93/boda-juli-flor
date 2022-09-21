@@ -1,5 +1,4 @@
 // Cuenta regresiva
-let fechaCuentaRegresiva = "01/21/2023 19:00:00";
 
 // Set the date we're counting down to
 let countDownDate = new Date(fechaCuentaRegresiva).getTime();

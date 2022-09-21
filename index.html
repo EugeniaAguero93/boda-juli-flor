@@ -92,7 +92,7 @@
     crossorigin="anonymous" 
     referrerpolicy="no-referrer"
   ></script> -->
-  <script src="./assets/parallax.min.js"></script>
+  <script type="text/javascript" src="./assets/parallax.min.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
     integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
@@ -105,18 +105,13 @@
     async
     defer
   ></script>
-  <script
-    type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_3ZK1od6HtymslnbVFuzpUbMfrCRVqzM&callback=initMap&r=1900769085"
-    async
-    defer
-  ></script>
 
   <script src="./scripts/configuration.js"></script>
   <script src="./scripts/base.js"></script>
   <script src="./scripts/es-AR.js"></script>
   <script src="./scripts/loader.js"></script>
   <script src="./scripts/clock.js"></script>
+  <script src="./scripts/carrusel.js"></script>
   <script src="./scripts/modals/music.js"></script>
   <script src="./scripts/modals/asistencia.js"></script>
   <script src="./scripts/modals/regalos.js"></script>
@@ -124,7 +119,10 @@
   <script src="./scripts/modals/sugerirMusica.js"></script>
   <script src="./scripts/modals/dressCode.js"></script>
 </head>
-<body>
+<body onload="handlePageLoaded()">
+  <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+  <div id="musicPlayerContainer"></div>
+
   <!-- Imagenes de fondo -->
   <div
     class="parallax-mirror"
@@ -180,12 +178,12 @@
   </div>
 
   <!-- Loader -->
-  <div class="preloader-area" style="display: none">
+  <div class="preloader-area">
     <div class="d-flex justify-content-center align-items-center h-100">
       <div
         class="lottie loader"
         data-animation-path="./assets/animation-data/corazon.json"
-        data-anim-loop="false"
+        data-anim-loop="true"
         data-name="loader"
       ></div>
     </div>
@@ -207,8 +205,15 @@
           </p>
           <span>La música de fondo es parte de la experiencia</span>
           <br />
-          <a class="boton" id="play-music-modal" href="">Ingresar con música</a>
-          <a class="boton" data-dismiss="modal" aria-label="Close" id="" href=""
+          <a class="boton" id="play-music-modal" href="#"
+            >Ingresar con música</a
+          >
+          <a
+            class="boton"
+            data-dismiss="modal"
+            aria-label="Close"
+            id=""
+            href="#"
             >Ingresar sin música</a
           >
         </div>
@@ -363,6 +368,9 @@
                 <span class="title atc_node notranslate"
                   >Boda de Juli y Flor (Civil)</span
                 >
+                <span class="location atc_node notranslate"
+                  >Finca Sol y Luna</span
+                >
               </a>
             </div>
 
@@ -402,7 +410,7 @@
           <div class="info-col">
             <div class="info-box">
               <h6>Día</h6>
-              <p>Sábado 21 de Enero - 19hs</p>
+              <p>Sábado 21 de Enero - 19:30hs</p>
               <a
                 href="#"
                 class="boton addeventatc"
@@ -418,7 +426,7 @@
                 <span class="nameBtn atc_node notranslate">Agendar</span>
 
                 <span class="start atc_node notranslate"
-                  >2023-01-21 19:00:00</span
+                  >2023-01-21 19:30:00</span
                 >
                 <span class="end atc_node notranslate"
                   >2023-01-22 06:00:00</span
@@ -428,6 +436,9 @@
                 >
                 <span class="title atc_node notranslate"
                   >Boda de Juli y Flor (Ceremonia y Fiesta)</span
+                >
+                <span class="location atc_node notranslate"
+                  >Finca Sol y Luna</span
                 >
               </a>
             </div>
@@ -482,298 +493,28 @@
       <div class="shadow-left"></div>
       <div class="shadow-right"></div>
 
-      <div
-        class="carrusel slick-initialized slick-slider slick-dotted"
-        id="carrusel"
-      >
+      <div class="carrusel">
         <!-- Impmrimo el bloque con la imagen -->
-
-        <div class="slick-list draggable" style="padding: 0px 20px">
-          <div
-            class="slick-track"
-            style="
-              opacity: 1;
-              width: 7524px;
-              transform: translate3d(-3762px, 0px, 0px);
-            "
-          >
-            <div
-              class="slick-slide slick-cloned"
-              data-slick-index="-4"
-              id=""
-              aria-hidden="true"
-              style="width: 627px"
-              tabindex="-1"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/1.jpg"
-                  data-fancybox="galeria"
-                  tabindex="-1"
-                >
-                  <img src="./assets/images/1.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide slick-cloned"
-              data-slick-index="-3"
-              id=""
-              aria-hidden="true"
-              style="width: 627px"
-              tabindex="-1"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/2.jpg"
-                  data-fancybox="galeria"
-                  tabindex="-1"
-                >
-                  <img src="./assets/images/2.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide slick-cloned"
-              data-slick-index="-2"
-              id=""
-              aria-hidden="true"
-              style="width: 627px"
-              tabindex="-1"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/4.jpg"
-                  data-fancybox="galeria"
-                  tabindex="-1"
-                >
-                  <img src="./assets/images/4.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide slick-cloned slick-center"
-              data-slick-index="-1"
-              id=""
-              aria-hidden="true"
-              style="width: 627px"
-              tabindex="-1"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/5.jpg"
-                  data-fancybox="galeria"
-                  tabindex="-1"
-                >
-                  <img src="./assets/images/5.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide"
-              data-slick-index="0"
-              aria-hidden="true"
-              style="width: 627px"
-              tabindex="-1"
-              role="tabpanel"
-              id="slick-slide00"
-              aria-describedby="slick-slide-control00"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/1.jpg"
-                  data-fancybox="galeria"
-                  tabindex="-1"
-                >
-                  <img src="./assets/images/1.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide"
-              data-slick-index="1"
-              aria-hidden="true"
-              style="width: 627px"
-              tabindex="-1"
-              role="tabpanel"
-              id="slick-slide01"
-              aria-describedby="slick-slide-control01"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/2.jpg"
-                  data-fancybox="galeria"
-                  tabindex="-1"
-                >
-                  <img src="./assets/images/2.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide slick-active"
-              data-slick-index="2"
-              aria-hidden="false"
-              style="width: 627px"
-              tabindex="-1"
-              role="tabpanel"
-              id="slick-slide02"
-              aria-describedby="slick-slide-control02"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/4.jpg"
-                  data-fancybox="galeria"
-                  tabindex="0"
-                >
-                  <img src="./assets/images/4.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide slick-current slick-active slick-center"
-              data-slick-index="3"
-              aria-hidden="false"
-              style="width: 627px"
-              tabindex="0"
-              role="tabpanel"
-              id="slick-slide03"
-              aria-describedby="slick-slide-control03"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/5.jpg"
-                  data-fancybox="galeria"
-                  tabindex="0"
-                >
-                  <img src="./assets/images/5.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide slick-cloned slick-active"
-              data-slick-index="4"
-              id=""
-              aria-hidden="false"
-              style="width: 627px"
-              tabindex="-1"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/1.jpg"
-                  data-fancybox="galeria"
-                  tabindex="0"
-                >
-                  <img src="./assets/images/1.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide slick-cloned"
-              data-slick-index="5"
-              id=""
-              aria-hidden="true"
-              style="width: 627px"
-              tabindex="-1"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/2.jpg"
-                  data-fancybox="galeria"
-                  tabindex="-1"
-                >
-                  <img src="./assets/images/2.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide slick-cloned"
-              data-slick-index="6"
-              id=""
-              aria-hidden="true"
-              style="width: 627px"
-              tabindex="-1"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/4.jpg"
-                  data-fancybox="galeria"
-                  tabindex="-1"
-                >
-                  <img src="./assets/images/4.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div
-              class="slick-slide slick-cloned"
-              data-slick-index="7"
-              id=""
-              aria-hidden="true"
-              style="width: 627px"
-              tabindex="-1"
-            >
-              <div class="polaroid">
-                <a
-                  href="./assets/images/5.jpg"
-                  data-fancybox="galeria"
-                  tabindex="-1"
-                >
-                  <img src="./assets/images/5.jpg" alt="" />
-                </a>
-              </div>
-            </div>
-          </div>
+        <div class="polaroid">
+          <a href="./assets/images/1.jpg" data-fancybox="galeria" tabindex="-1">
+            <img src="./assets/images/1.jpg" alt="" />
+          </a>
         </div>
-        <ul class="slick-dots" role="tablist">
-          <li class="" role="presentation">
-            <button
-              type="button"
-              role="tab"
-              id="slick-slide-control00"
-              aria-controls="slick-slide00"
-              aria-label="1 of 2"
-              tabindex="-1"
-            >
-              1
-            </button>
-          </li>
-          <li role="presentation" class="">
-            <button
-              type="button"
-              role="tab"
-              id="slick-slide-control01"
-              aria-controls="slick-slide01"
-              aria-label="2 of 2"
-              tabindex="-1"
-            >
-              2
-            </button>
-          </li>
-          <li role="presentation" class="">
-            <button
-              type="button"
-              role="tab"
-              id="slick-slide-control02"
-              aria-controls="slick-slide02"
-              aria-label="3 of 2"
-              tabindex="-1"
-            >
-              3
-            </button>
-          </li>
-          <li role="presentation" class="slick-active">
-            <button
-              type="button"
-              role="tab"
-              id="slick-slide-control03"
-              aria-controls="slick-slide03"
-              aria-label="4 of 2"
-              tabindex="0"
-              aria-selected="true"
-            >
-              4
-            </button>
-          </li>
-        </ul>
+        <div class="polaroid">
+          <a href="./assets/images/2.jpg" data-fancybox="galeria" tabindex="-1">
+            <img src="./assets/images/2.jpg" alt="" />
+          </a>
+        </div>
+        <div class="polaroid">
+          <a href="./assets/images/4.jpg" data-fancybox="galeria" tabindex="-1">
+            <img src="./assets/images/4.jpg" alt="" />
+          </a>
+        </div>
+        <div class="polaroid">
+          <a href="./assets/images/5.jpg" data-fancybox="galeria" tabindex="-1">
+            <img src="./assets/images/5.jpg" alt="" />
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -795,7 +536,6 @@
         </div>
         <!-- Canciones -->
         <div class="col-md-4 item-fiesta">
-          <!-- <img class="hojas-musica" src="https://www.fixdate.io/modelo-invitacion/30/img/img_hojasFiesta.svg" alt=""> -->
           <img
             class="hojas-musica"
             src="./assets/images/img_hojasFiesta.svg"
@@ -1033,19 +773,11 @@
       data-anim-loop="true"
       data-name="music-anim-icon"
       data-estado-music="pause"
+      onclick="playPauseMusic()"
     ></div>
   </div>
 
-  <iframe
-    id="player-musica-fondo"
-    allowfullscreen="1"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    title="Ed Sheeran - Perfect (Lyrics)"
-    src="https://www.youtube.com/embed/?playlist=EH30RAXnRWs&amp;loop=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.fixdate.io&amp;widgetid=1"
-    width="10"
-    height="10"
-    frameborder="0"
-  ></iframe>
+  <div id="player-musica-fondo"></div>
 
   <!-- Si esta en modo "Modelo" muestro el repdorductor de musica sin musica -->
 
@@ -1322,352 +1054,10 @@
           <h5 class="modal-title"></h5>
         </div>
         <div class="modal-body">
-          <div id="googleMap" style="position: relative; overflow: hidden">
-            <div
-              style="
-                height: 100%;
-                width: 100%;
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                background-color: rgb(229, 227, 223);
-              "
-            >
-              <div style="overflow: hidden"></div>
-              <div
-                style="
-                  position: absolute;
-                  z-index: 0;
-                  left: 0px;
-                  top: 0px;
-                  height: 100%;
-                  width: 100%;
-                  padding: 0px;
-                  border-width: 0px;
-                  margin: 0px;
-                "
-                class="gm-style"
-              >
-                <div
-                  style="
-                    position: absolute;
-                    z-index: 0;
-                    left: 0px;
-                    top: 0px;
-                    height: 100%;
-                    width: 100%;
-                    padding: 0px;
-                    border-width: 0px;
-                    margin: 0px;
-                    cursor: url('https://maps.gstatic.com/mapfiles/openhand_8_8.cur'),
-                      default;
-                    touch-action: pan-x pan-y;
-                  "
-                  tabindex="0"
-                  aria-label="Mapa"
-                  aria-roledescription="mapa"
-                  role="region"
-                >
-                  <div
-                    style="
-                      z-index: 1;
-                      position: absolute;
-                      left: 50%;
-                      top: 50%;
-                      width: 100%;
-                      transform: translate(0px);
-                    "
-                  >
-                    <div
-                      style="
-                        position: absolute;
-                        left: 0px;
-                        top: 0px;
-                        z-index: 100;
-                        width: 100%;
-                      "
-                    >
-                      <div
-                        style="
-                          position: absolute;
-                          left: 0px;
-                          top: 0px;
-                          z-index: 0;
-                        "
-                      >
-                        <div
-                          style="
-                            position: absolute;
-                            z-index: 985;
-                            transform: matrix(1, 0, 0, 1, 0, 0);
-                          "
-                        >
-                          <div
-                            style="
-                              position: absolute;
-                              left: 0px;
-                              top: 0px;
-                              width: 256px;
-                              height: 256px;
-                            "
-                          >
-                            <div style="width: 256px; height: 256px"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      style="
-                        position: absolute;
-                        left: 0px;
-                        top: 0px;
-                        z-index: 101;
-                        width: 100%;
-                      "
-                    ></div>
-                    <div
-                      style="
-                        position: absolute;
-                        left: 0px;
-                        top: 0px;
-                        z-index: 102;
-                        width: 100%;
-                      "
-                    ></div>
-                    <div
-                      style="
-                        position: absolute;
-                        left: 0px;
-                        top: 0px;
-                        z-index: 103;
-                        width: 100%;
-                      "
-                    >
-                      <div
-                        style="
-                          position: absolute;
-                          left: 0px;
-                          top: 0px;
-                          z-index: -1;
-                        "
-                      >
-                        <div
-                          style="
-                            position: absolute;
-                            z-index: 985;
-                            transform: matrix(1, 0, 0, 1, 0, 0);
-                          "
-                        >
-                          <div
-                            style="
-                              width: 256px;
-                              height: 256px;
-                              overflow: hidden;
-                              position: absolute;
-                              left: 0px;
-                              top: 0px;
-                            "
-                          ></div>
-                        </div>
-                      </div>
-                      <div
-                        style="
-                          width: 26px;
-                          height: 37px;
-                          overflow: hidden;
-                          position: absolute;
-                          left: -13px;
-                          top: -37px;
-                          z-index: 0;
-                        "
-                      >
-                        <img
-                          style="
-                            position: absolute;
-                            left: 0px;
-                            top: 0px;
-                            width: 26px;
-                            height: 37px;
-                            user-select: none;
-                            border: 0px none;
-                            padding: 0px;
-                            margin: 0px;
-                            max-width: none;
-                          "
-                          alt=""
-                          src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi3.png"
-                          draggable="false"
-                        />
-                      </div>
-                    </div>
-                    <div
-                      style="
-                        position: absolute;
-                        left: 0px;
-                        top: 0px;
-                        z-index: 0;
-                      "
-                    ></div>
-                  </div>
-                  <div
-                    style="
-                      z-index: 3;
-                      position: absolute;
-                      height: 100%;
-                      width: 100%;
-                      padding: 0px;
-                      border-width: 0px;
-                      margin: 0px;
-                      left: 0px;
-                      top: 0px;
-                      touch-action: pan-x pan-y;
-                    "
-                  >
-                    <div
-                      style="
-                        z-index: 4;
-                        position: absolute;
-                        left: 50%;
-                        top: 50%;
-                        width: 100%;
-                        transform: translate(0px);
-                      "
-                    >
-                      <div
-                        style="
-                          position: absolute;
-                          left: 0px;
-                          top: 0px;
-                          z-index: 104;
-                          width: 100%;
-                        "
-                      ></div>
-                      <div
-                        style="
-                          position: absolute;
-                          left: 0px;
-                          top: 0px;
-                          z-index: 105;
-                          width: 100%;
-                        "
-                      ></div>
-                      <div
-                        style="
-                          position: absolute;
-                          left: 0px;
-                          top: 0px;
-                          z-index: 106;
-                          width: 100%;
-                        "
-                      >
-                        <span
-                          id="57FFF15B-4229-4F66-B2A5-55E5C3B19F1E"
-                          style="display: none"
-                          >Para navegar, presiona las teclas de flecha.</span
-                        >
-                        <div
-                          style="
-                            width: 26px;
-                            height: 37px;
-                            overflow: hidden;
-                            position: absolute;
-                            left: -13px;
-                            top: -37px;
-                            z-index: 0;
-                          "
-                          tabindex="-1"
-                        >
-                          <img
-                            style="
-                              width: 26px;
-                              height: 37px;
-                              user-select: none;
-                              border: 0px none;
-                              padding: 0px;
-                              margin: 0px;
-                              max-width: none;
-                            "
-                            alt=""
-                            src="https://maps.gstatic.com/mapfiles/transparent.png"
-                            draggable="false"
-                            usemap="#gmimap0"
-                          />
-                          <map name="gmimap0" id="gmimap0"
-                            ><area
-                              log="miw"
-                              coords="13,0,4,3.5,0,12,2.75,21,13,37,23.5,21,26,12,22,3.5"
-                              shape="poly"
-                              tabindex="-1"
-                              style="
-                                display: inline;
-                                position: absolute;
-                                left: 0px;
-                                top: 0px;
-                                cursor: pointer;
-                                touch-action: none;
-                              "
-                              title=""
-                          /></map>
-                        </div>
-                      </div>
-                      <div
-                        style="
-                          position: absolute;
-                          left: 0px;
-                          top: 0px;
-                          z-index: 107;
-                          width: 100%;
-                        "
-                      ></div>
-                    </div>
-                  </div>
-                  <div
-                    style="
-                      z-index: 4;
-                      position: absolute;
-                      height: 100%;
-                      width: 100%;
-                      padding: 0px;
-                      border-width: 0px;
-                      margin: 0px;
-                      left: 0px;
-                      top: 0px;
-                      opacity: 0;
-                    "
-                    class="gm-style-moc"
-                  >
-                    <p class="gm-style-mot"></p>
-                  </div>
-                </div>
-                <iframe
-                  aria-hidden="true"
-                  tabindex="-1"
-                  style="
-                    z-index: -1;
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 0px;
-                    left: 0px;
-                    border: medium none;
-                  "
-                  frameborder="0"
-                ></iframe>
-                <div
-                  style="
-                    pointer-events: none;
-                    width: 100%;
-                    height: 100%;
-                    box-sizing: border-box;
-                    position: absolute;
-                    z-index: 1000002;
-                    opacity: 0;
-                    border: 2px solid rgb(26, 115, 232);
-                  "
-                ></div>
-              </div>
-            </div>
-          </div>
+          <div
+            id="googleMap"
+            style="position: relative; overflow: hidden"
+          ></div>
         </div>
         <div class="modal-footer">
           <a class="boton ampliar-mapa" target="_blank" href="#"

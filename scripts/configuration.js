@@ -5,13 +5,18 @@ const langJs = "es";
 const langJsVariante = "es-AR";
 const langDefault = "es-AR";
 
-let prealoaderOption = $(window);
+let windowElement = $(window);
+
+// Cuenta regresiva
+const fechaCuentaRegresiva = "01/21/2023 19:00:00";
 
 // Mapas
-const latitudCeremoniaFiesta = -34.6201481;
-const longitudCeremoniaFiesta = -58.4046887;
-const latitudCivil = -34.6201481;
-const longitudCivil = -58.4046887;
+const embeddedUrlCeremoniaFiesta =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.150211868588!2d-58.176657368466465!3d-34.90267971813002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2d9edd7d22de1%3A0x37deb356ccd9235!2sFinca%20Sol%20y%20Luna!5e0!3m2!1ses-419!2sar!4v1663597993794!5m2!1ses-419!2sar";
+const urlCeremoniaFiesta = "https://goo.gl/maps/ro4qbym4ux2Jrcqr9";
+const embeddedUrlCivil =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.150211868588!2d-58.176657368466465!3d-34.90267971813002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2d9edd7d22de1%3A0x37deb356ccd9235!2sFinca%20Sol%20y%20Luna!5e0!3m2!1ses-419!2sar!4v1663597993794!5m2!1ses-419!2sar"; // TODO: Change this
+const urlCivil = "https://goo.gl/maps/ro4qbym4ux2Jrcqr9"; // TODO: Change this
 
 let device = "desktop";
 
@@ -43,11 +48,11 @@ if (device == "mobile" || $(window).width() < 768) {
   }
 }
 
-setTimeout(() => {
+windowElement.ready(() => {
   $(".portada").parallax({
     imageSrc: imageParallax,
   });
-}, 1000);
+});
 
 // Funciones y variables globales
 // Funcion para validar formato url
